@@ -10,7 +10,7 @@ import java.util.Set;
 public class Lotto {
     public static void main(String[] args) {
         LottoNum2 aaa = new LottoNum2();    
-        aaa.numAdd(13, 26);
+        aaa.numAdd(26);
         aaa.check();         
     }
 }
@@ -27,13 +27,13 @@ class LottoNum2 {
         lottoList = new ArrayList<>();
     }
 
-    public void numAdd(int a, int b) {
+    public void numAdd(int a) {
         numList.add(a);
-        numList.add(b);
+//        numList.add(b);
 //        numList.add(c);
 
         while (lottoList.size() < 5) {
-            List<Integer> lotto = newLottoNumber(new HashSet<>(Arrays.asList(a,b)));
+            List<Integer> lotto = newLottoNumber(new HashSet<>(Arrays.asList(a)));
             if (!lotto.isEmpty()) {
                 lottoList.add(lotto);
             }
