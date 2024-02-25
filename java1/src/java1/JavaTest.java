@@ -6,6 +6,7 @@ public class JavaTest {
 		int a = 100;
 		System.out.println(a);
 		//test12345
+		//패치 테스트
 	}
 
 }
