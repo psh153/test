@@ -7,7 +7,7 @@ public class JavaTest {
 		System.out.println(a);
 		//test12345
 		//패치 테스트
-		// 패치 2
+		// 패치 2123
 	}
 
 }
