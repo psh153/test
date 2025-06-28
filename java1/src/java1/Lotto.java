@@ -12,6 +12,7 @@ public class Lotto {
         LottoNum2 aaa = new LottoNum2();    
         aaa.numAdd(26);
         aaa.check();         
+//        신기하구만
     }
 }
 
