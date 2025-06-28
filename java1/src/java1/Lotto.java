@@ -10,9 +10,8 @@ import java.util.Set;
 public class Lotto {
     public static void main(String[] args) {
         LottoNum2 aaa = new LottoNum2();    
-        aaa.numAdd(26);
+        aaa.numAdd(37);
         aaa.check();         
-//        신기하구만
     }
 }
 
@@ -28,13 +27,15 @@ class LottoNum2 {
         lottoList = new ArrayList<>();
     }
 
-    public void numAdd(int a) {
-        numList.add(a);
-//        numList.add(b);
-//        numList.add(c);
+    public void numAdd(int a
+//    		,int b
+//    		,int c
+    		) {
+        Set<Integer> fixedNumbers = new HashSet<>(Arrays.asList(a));
+
 
         while (lottoList.size() < 5) {
-            List<Integer> lotto = newLottoNumber(new HashSet<>(Arrays.asList(a)));
+            List<Integer> lotto = newLottoNumber(new HashSet<>(fixedNumbers));
             if (!lotto.isEmpty()) {
                 lottoList.add(lotto);
             }
@@ -42,16 +43,16 @@ class LottoNum2 {
     }
 
     public List<Integer> newLottoNumber(Set<Integer> numbers) {
-        boolean result = true;
+        
         while (numbers.size() < 6) {
             int num = numList.get(new Random().nextInt(numList.size()));
             numbers.add(num);
         }
         List<Integer> lotto = new ArrayList<>(numbers);
         lotto.sort(Integer::compareTo);
-        result = numCheck(lotto);
-        if (!result) {
-            lotto.clear();
+        
+        if (!numCheck(lotto)) {
+            return new ArrayList<>(); // 유효하지 않은 경우 빈 리스트를 반환합니다.
         }
         return lotto;
     }
@@ -70,7 +71,7 @@ class LottoNum2 {
     public void check() {
         System.out.println("=====================================");
         for (List<Integer> lotto : lottoList) {
-            System.out.println("로또 : " + lotto);
+            System.out.println(lotto);
         }
         System.out.println("=====================================");
     }
