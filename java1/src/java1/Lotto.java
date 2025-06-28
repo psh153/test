@@ -11,7 +11,7 @@ public class Lotto {
     public static void main(String[] args) {
         LottoNum2 aaa = new LottoNum2();    
         aaa.numAdd(37);
-        aaa.check();         // 다시 수정
+        aaa.check();         
     }
 }
 
