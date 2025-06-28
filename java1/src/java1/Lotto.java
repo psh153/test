@@ -12,6 +12,7 @@ public class Lotto {
         LottoNum2 aaa = new LottoNum2();    
         aaa.numAdd(37);
         aaa.check();         // 아니 어떻게 하는겨?
+//        난 얘만 수정해야징
     }
 }
 
